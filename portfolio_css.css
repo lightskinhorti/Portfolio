@@ -937,3 +937,125 @@ footer {
         padding: 1.5rem;
     }
 }
+/* Social Buttons with SVG Icons */
+.hero-social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    animation: fadeInUp 0.8s ease 0.8s backwards;
+    flex-wrap: wrap;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.social-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.social-btn.linkedin {
+    background: #0077b5;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
+}
+
+.social-btn.github {
+    background: #333;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn.linkedin:hover {
+    background: #00669c;
+    box-shadow: 0 8px 25px rgba(0, 119, 181, 0.4);
+}
+
+.social-btn.github:hover {
+    background: #24292e;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.social-btn:hover .social-icon {
+    transform: scale(1.1);
+}
+
+/* Footer specific styles */
+.footer-social .social-btn {
+    padding: 0.8rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social .social-btn span {
+    display: none;
+}
+
+.footer-social .social-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Pulse animation for footer icons */
+.footer-social .social-btn:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive para social buttons */
+@media (max-width: 768px) {
+    .hero-social {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-btn {
+        min-width: 160px;
+        justify-content: center;
+    }
+    
+    .footer-social .social-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .footer-social .social-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
