@@ -852,10 +852,11 @@ footer {
     padding-top: 2rem;
     border-top: 1px solid #e2e8f0;
     flex-wrap: wrap;
+    justify-content: center; /* Centra el botón */
 }
 
 .modal-links .btn {
-    padding: 1rem 2rem;
+    padding: 1rem 2.5rem;
     border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
@@ -863,6 +864,8 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    min-width: 200px; /* Ancho mínimo para que se vea bien */
+    justify-content: center; /* Centra el texto dentro del botón */
 }
 
 .modal-links .btn-primary {

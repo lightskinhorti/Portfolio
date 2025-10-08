@@ -137,8 +137,7 @@ const projectModal = {
                     "Dockerización y despliegue",
                     "Documentación técnica y de usuario"
                 ],
-                demoLink: "#",
-                codeLink: "#"
+                codeLink: "https://github.com/lightskinhorti/TFG-ERP"
             }
         };
         
@@ -180,11 +179,8 @@ const projectModal = {
             </div>
             
             <div class="modal-links">
-                <a href="${project.demoLink}" class="btn btn-primary" target="_blank">
-                    <span>Ver Demo</span>
-                </a>
-                <a href="${project.codeLink}" class="btn btn-secondary" target="_blank">
-                    <span>Código Fuente</span>
+                <a href="${project.codeLink}" class="btn btn-primary" target="_blank">
+                    <span>Ver Código en GitHub</span>
                 </a>
             </div>
         `;
