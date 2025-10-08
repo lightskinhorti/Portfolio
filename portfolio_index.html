@@ -43,7 +43,7 @@
                 <p class="section-subtitle">Soluciones innovadoras que combinan tecnología y creatividad</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-project="erp">
                     <div class="project-image">📊</div>
                     <div class="project-content">
                         <span class="project-tag">TFG - Trabajo Fin de Grado</span>
@@ -56,43 +56,23 @@
                             <span class="tech-badge">React</span>
                             <span class="tech-badge">Docker</span>
                         </div>
-                        <a href="#" class="project-link">Ver detalles →</a>
+                        <a href="#erp-details" class="project-link view-details">Ver detalles →</a>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-image">🌐</div>
-                    <div class="project-content">
-                        <span class="project-tag">Desarrollo Web</span>
-                        <h3>Plataforma Corporate Digitec</h3>
-                        <p>Desarrollo y mantenimiento de aplicaciones web corporativas con PHP y JavaScript, implementando soluciones personalizadas para clientes empresariales.</p>
-                        <div class="project-tech">
-                            <span class="tech-badge">PHP</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">HTML5/CSS3</span>
-                        </div>
-                        <a href="#" class="project-link">Ver más →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">🗳️</div>
-                    <div class="project-content">
-                        <span class="project-tag">Proyecto Internacional</span>
-                        <h3>Sistema Electoral El Salvador</h3>
-                        <p>Coordinación y soporte técnico del sistema de votación electrónica para las elecciones de El Salvador, garantizando acceso desde cualquier ubicación global.</p>
-                        <div class="project-tech">
-                            <span class="tech-badge">ServiceNow</span>
-                            <span class="tech-badge">Remedy</span>
-                            <span class="tech-badge">Soporte N2</span>
-                            <span class="tech-badge">Coordinación</span>
-                        </div>
-                        <a href="#" class="project-link">Leer más →</a>
-                    </div>
-                </div>
+        
+                <!-- Agregar mas proyectos  -->
             </div>
         </section>
+        
+        <!-- Modal para detalles del proyecto -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modal-body">
+                    <!-- El contenido se cargará dinámicamente -->
+                </div>
+            </div>
+        </div>
 
         <section class="container" id="experiencia">
             <div class="section-header">
