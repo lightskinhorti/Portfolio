@@ -140,7 +140,6 @@ const projectModal = {
                 demoLink: "#",
                 codeLink: "#"
             }
-            // Puedes agregar más proyectos aquí siguiendo la misma estructura
         };
         
         const project = projects[projectType];
@@ -166,7 +165,7 @@ const projectModal = {
                 <div class="modal-sidebar">
                     <div class="tech-stack">
                         <h4>Tecnologías Utilizadas</h4>
-                        <div>
+                        <div class="tech-badges-container">
                             ${project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
                         </div>
                     </div>
@@ -181,8 +180,12 @@ const projectModal = {
             </div>
             
             <div class="modal-links">
-                <a href="${project.demoLink}" class="btn btn-primary" target="_blank">Ver Demo</a>
-                <a href="${project.codeLink}" class="btn btn-secondary" target="_blank">Código Fuente</a>
+                <a href="${project.demoLink}" class="btn btn-primary" target="_blank">
+                    <span>Ver Demo</span>
+                </a>
+                <a href="${project.codeLink}" class="btn btn-secondary" target="_blank">
+                    <span>Código Fuente</span>
+                </a>
             </div>
         `;
     }
