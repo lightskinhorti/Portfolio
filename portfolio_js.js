@@ -142,23 +142,24 @@ El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySp
             investment: {
                 tag: "Full-Stack · ML · Cloud",
                 title: "Investment Tracker",
-                subtitle: "Plataforma full-stack de seguimiento de carteras con módulo de predicción de precios integrado. Desarrollada con Claude Code como copiloto — ciclo de entrega ~40% más rápido.",
-                description: "Aplicación web completa para el tracking de inversiones personales que va más allá del registro contable: integra un módulo ML que genera predicciones de precio sobre los activos de la cartera usando Scikit-learn y Prophet. El backend en FastAPI expone tanto los endpoints de negocio como el servicio de inferencia; el frontend en React/TypeScript consume la API y muestra visualizaciones de rendimiento histórico y proyecciones. Todo el stack está containerizado con Docker y desplegado en AWS. El desarrollo se realizó con Claude Code como copiloto de código, reduciendo el tiempo de desarrollo estimado en aproximadamente un 40% frente a un flujo tradicional.",
+                subtitle: "Plataforma completa de análisis de carteras con predicción ML integrada — RSI, SMA, benchmark vs S&amp;P 500 y Bitcoin, e intervalo de confianza por activo.",
+                description: "Aplicación web full-stack para el tracking y análisis de carteras de inversión con un módulo ML que genera predicciones de precio por activo con intervalo de confianza y score de confianza (93.3% en validación con NVDA). El dashboard muestra P&L en tiempo real y comparativa normalizada contra benchmarks de mercado (S&P 500, Bitcoin). La pestaña de Análisis ofrece indicadores técnicos completos (RSI 14 períodos, SMA 20/SMA 50) con detección automática de señales (Golden Cross, tendencia bajista). El backend FastAPI expone los endpoints de negocio y el servicio de inferencia ML; el frontend React/TypeScript renderiza gráficas interactivas con múltiples timeframes. Desarrollada con Claude Code como copiloto, reduciendo el ciclo de entrega en ~40%.",
                 features: [
-                    "Dashboard de cartera con rendimiento histórico, distribución de activos y métricas de riesgo (volatilidad, drawdown)",
-                    "Predicción de precios con Scikit-learn (regresión) y Prophet (series temporales con estacionalidad)",
-                    "Backend FastAPI con autenticación JWT, endpoints documentados con OpenAPI/Swagger",
-                    "Base de datos PostgreSQL gestionada en AWS RDS con migraciones versionadas",
-                    "Frontend React + TypeScript con gráficos interactivos de evolución de cartera",
-                    "Containerización completa con Docker; despliegue en AWS EC2 + RDS",
-                    "Ciclo de desarrollo acelerado ~40% usando Claude Code como copiloto de código"
+                    "Dashboard de cartera: Total Invertido, Valor Actual, Ganancia/Pérdida y Rendimiento en tiempo real — soporta acciones, ETFs y crypto",
+                    "Análisis técnico completo: RSI (14 períodos), SMA 20 y SMA 50 con detección automática de señales (Golden Cross, tendencia bajista/alcista)",
+                    "Gráficas de precio interactivas con overlay de medias móviles y selección de timeframe (1D · 1S · 1M · 3M · 1A)",
+                    "Benchmarks: rendimiento de cartera normalizado a base 100 vs S&P 500 y Bitcoin con comparativa por periodo",
+                    "Predicción ML por activo a 7/14/30 días: precio proyectado con intervalo de confianza superior/inferior, score de confianza y volatilidad histórica",
+                    "Pestañas adicionales: Correlación entre activos y sistema de Alertas configurable",
+                    "Backend FastAPI con autenticación JWT y endpoints REST documentados con OpenAPI/Swagger",
+                    "Ciclo de desarrollo acelerado ~40% con Claude Code como copiloto de código"
                 ],
                 tech: ["FastAPI", "React", "TypeScript", "PostgreSQL", "Scikit-learn", "Prophet", "Docker", "AWS", "JWT"],
                 responsibilities: [
-                    "Definición de la arquitectura del sistema y diseño del modelo de datos",
-                    "Desarrollo del módulo de predicción ML y su exposición como microservicio en FastAPI",
-                    "Implementación del frontend React/TypeScript con gestión de estado y visualizaciones",
-                    "Configuración del entorno AWS (EC2, RDS) y pipeline de despliegue con Docker",
+                    "Arquitectura completa: diseño de la API, modelo de datos y pipeline ML end-to-end",
+                    "Implementación del módulo de predicción ML (regresión + Prophet) y exposición como endpoint de inferencia en FastAPI",
+                    "Desarrollo del frontend React/TypeScript: dashboard, gráficas interactivas, indicadores técnicos RSI/SMA y benchmarks",
+                    "Configuración del entorno AWS (EC2 + RDS PostgreSQL) y containerización con Docker",
                     "Integración de Claude Code en el flujo de desarrollo para generación y revisión de código"
                 ],
                 codeLink: "https://github.com/lightskinhorti/Trading-App-Tracker"

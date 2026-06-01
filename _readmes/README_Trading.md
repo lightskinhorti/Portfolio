@@ -1,6 +1,27 @@
-# Investment Tracker — App Full-Stack con ML
+# Investment Tracker — Análisis de Carteras con ML
 
-Plataforma de seguimiento de carteras de inversión con predicción de precios integrada. Backend FastAPI, frontend React/TypeScript, PostgreSQL en AWS. Desarrollada con Claude Code como copiloto — ciclo de entrega ~40% más rápido.
+Plataforma web full-stack para el seguimiento y análisis de carteras de inversión con módulo de predicción ML integrado. Dashboard de P&L en tiempo real, análisis técnico (RSI, SMA), benchmark vs S&P 500 y Bitcoin, y predicciones de precio por activo con intervalo de confianza.
+
+Desarrollada con Claude Code como copiloto — ciclo de entrega ~40% más rápido frente al flujo tradicional.
+
+---
+
+## Capturas
+
+### Dashboard de Cartera
+> Total Invertido · Valor Actual · Ganancia/Pérdida · Rendimiento en tiempo real
+
+### Análisis Técnico — RSI y SMA
+> RSI (14 períodos), SMA 20 y SMA 50 con señales automáticas (Golden Cross, tendencia bajista/alcista)
+
+### Gráfica de Precio Interactiva
+> Precio histórico con overlay de medias móviles, timeframes 1D / 1S / 1M / 3M / 1A
+
+### Rendimiento vs Benchmarks
+> Cartera normalizada a base 100 vs S&P 500 y Bitcoin
+
+### Predicción ML
+> Precio proyectado a 7/14/30 días con intervalo de confianza superior/inferior, score de confianza y volatilidad histórica
 
 ---
 
@@ -15,13 +36,14 @@ Plataforma de seguimiento de carteras de inversión con predicción de precios i
 | Infraestructura | Docker · AWS EC2 |
 | API docs | OpenAPI / Swagger |
 
-## Características
+## Funcionalidades
 
-- **Dashboard de cartera** — rendimiento histórico, distribución de activos, métricas de riesgo (volatilidad, drawdown)
-- **Predicción de precios** — modelos de regresión (Scikit-learn) y series temporales con estacionalidad (Prophet)
-- **Autenticación JWT** — sistema de usuarios con sesiones seguras
-- **API REST documentada** — endpoints disponibles en `/docs` con Swagger UI
-- **Despliegue en AWS** — EC2 + RDS PostgreSQL + Docker
+- **Portfolio tab** — tabla de activos (acciones, ETFs, crypto) con Cantidad, Precio Compra, Precio Actual, P/L y variación 24h
+- **Análisis tab** — RSI (14 períodos), SMA 20 y SMA 50 con señales automáticas de compra/venta. Gráfica de precio interactiva con overlay de medias y selección de timeframe
+- **Benchmarks tab** — rendimiento de la cartera normalizado a base 100 comparado con S&P 500 y Bitcoin por periodo (1S · 1M · 3M · 1A)
+- **Predicciones tab** — modelo ML que genera precio proyectado a 7/14/30 días con límite inferior/superior del intervalo de confianza, score de confianza del modelo y volatilidad histórica del activo
+- **Correlación tab** — matriz de correlación entre activos de la cartera
+- **Alertas tab** — sistema de alertas configurables por precio
 
 ## Cómo ejecutar en local
 
@@ -29,21 +51,14 @@ Plataforma de seguimiento de carteras de inversión con predicción de precios i
 git clone https://github.com/lightskinhorti/Trading-App-Tracker.git
 cd Trading-App-Tracker
 
-# Backend
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-
-# Frontend
-cd frontend
-npm install
-npm run dev
-```
-
-Con Docker:
-
-```bash
+# Con Docker (recomendado)
 docker-compose up --build
+
+# Backend manual
+cd backend && pip install -r requirements.txt && uvicorn main:app --reload
+
+# Frontend manual
+cd frontend && npm install && npm run dev
 ```
 
 ## Variables de entorno
@@ -55,4 +70,5 @@ SECRET_KEY=your_jwt_secret
 
 ## Autor
 
-**Javier Hortigüela Valiente** — [LinkedIn](https://es.linkedin.com/in/javierhortiguela) · [Portfolio](https://lightskinhorti.github.io/Portfolio/)
+**Javier Hortigüela Valiente** — Data Engineer & ML Engineer  
+[LinkedIn](https://es.linkedin.com/in/javierhortiguela) · [Portfolio](https://lightskinhorti.github.io/Portfolio/) · [GitHub](https://github.com/lightskinhorti)
