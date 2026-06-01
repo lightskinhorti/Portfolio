@@ -136,8 +136,7 @@ El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySp
                     "Análisis de feature importance e interpretabilidad del modelo en contexto industrial",
                     "Documentación técnica del proyecto y defensa ante el tribunal del máster"
                 ],
-                // TODO: add real repo URL
-                codeLink: "#"
+                codeLink: "https://github.com/lightskinhorti/TFM_CMAPSS-FD001"
             },
 
             investment: {
