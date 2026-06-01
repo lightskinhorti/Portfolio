@@ -115,23 +115,26 @@ const projectModal = {
             tfm: {
                 tag: "TFM — Máster IA & Big Data",
                 title: "Mantenimiento Predictivo — NASA CMAPSS",
-                subtitle: "Pipeline ML end-to-end para predicción de vida útil residual (RUL) en motores turbofan sobre el benchmark aeroespacial NASA CMAPSS.",
-                description: "Proyecto fin de máster que cubre el ciclo completo de un sistema ML en producción: desde la ingesta y exploración distribuida del dataset NASA CMAPSS con PySpark, hasta el despliegue de una API de inferencia con FastAPI y una interfaz interactiva con Streamlit. Incluye experiment tracking con MLflow para comparar modelos (XGBoost, Random Forest, regresión) y containerización completa con Docker.",
+                subtitle: "Pipeline ML end-to-end para predicción de vida útil residual (RUL) en motores turbofan sobre el benchmark aeroespacial NASA CMAPSS — estándar de referencia en la industria de mantenimiento predictivo.",
+                description: `El dataset NASA CMAPSS (Commercial Modular Aero-Propulsion System Simulation) es el benchmark más utilizado en investigación de mantenimiento predictivo aeroespacial. Consta de 4 subsets (FD001–FD004) que simulan distintos modos de fallo y condiciones operativas, con más de 20 000 ciclos de motor registrados por 21 sensores cada uno. El objetivo es predecir el RUL (Remaining Useful Life) como un problema de regresión supervisada: dado el histórico de señales de un motor, estimar cuántos ciclos le quedan antes de fallo. <br><br>
+El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySpark, pasando por feature engineering avanzado, entrenamiento con experiment tracking en MLflow, hasta el despliegue de una API de inferencia en FastAPI y una UI interactiva en Streamlit, todo containerizado con Docker.`,
                 features: [
-                    "EDA distribuido sobre dataset CMAPSS con PySpark (4 subsets, +20 000 ciclos de motor)",
-                    "Benchmark de modelos supervisados: XGBoost, Random Forest, Ridge Regression",
-                    "Experiment tracking y registro de modelos con MLflow",
-                    "API de inferencia REST desplegada con FastAPI",
-                    "Dashboard interactivo de predicción con Streamlit",
-                    "Pipeline containerizado end-to-end con Docker Compose"
+                    "Ingesta y EDA distribuido con PySpark sobre los 4 subsets CMAPSS (FD001–FD004) con distintas condiciones operativas y modos de fallo",
+                    "Feature engineering avanzado: rolling statistics (media, desviación estándar en ventanas deslizantes), lag features por ciclo y normalización por unidad operativa",
+                    "Benchmark de 4 modelos supervisados: XGBoost, Random Forest, SVR y Gradient Boosting — evaluados con RMSE, MAE y la función de scoring asimétrico propia de NASA (penaliza más las predicciones tardías)",
+                    "Experiment tracking completo con MLflow: logging de hiperparámetros, métricas por fold, artifacts y registro del modelo campeón en el Model Registry",
+                    "API de inferencia REST con FastAPI: endpoint /predict que acepta secuencias de sensores y devuelve RUL estimado con intervalo de confianza",
+                    "Dashboard interactivo en Streamlit: visualización de degradación del motor, curva de RUL predicha vs real y análisis de feature importance",
+                    "Pipeline containerizado end-to-end con Docker Compose para reproducibilidad total del entorno"
                 ],
-                tech: ["Python", "PySpark", "Scikit-learn", "XGBoost", "MLflow", "FastAPI", "Streamlit", "Docker"],
+                tech: ["Python", "PySpark", "Scikit-learn", "XGBoost", "MLflow", "FastAPI", "Streamlit", "Docker", "pandas", "NumPy"],
                 responsibilities: [
-                    "Diseño del pipeline distribuido de ingesta y preprocesamiento",
-                    "Feature engineering sobre señales de sensor (rolling stats, lag features)",
-                    "Entrenamiento, evaluación y selección de modelos con MLflow",
-                    "Desarrollo de la API de inferencia y la UI de Streamlit",
-                    "Documentación técnica y análisis de resultados"
+                    "Diseño de la arquitectura completa del pipeline ML (ingesta → features → train → serving)",
+                    "Implementación del EDA distribuido y feature engineering con PySpark",
+                    "Entrenamiento, tuning de hiperparámetros y selección del modelo con MLflow como sistema de registro",
+                    "Desarrollo de la API de inferencia (FastAPI) y la interfaz de exploración (Streamlit)",
+                    "Análisis de feature importance e interpretabilidad del modelo en contexto industrial",
+                    "Documentación técnica del proyecto y defensa ante el tribunal del máster"
                 ],
                 // TODO: add real repo URL
                 codeLink: "#"
@@ -140,23 +143,24 @@ const projectModal = {
             investment: {
                 tag: "Full-Stack · ML · Cloud",
                 title: "Investment Tracker",
-                subtitle: "Aplicación full-stack de seguimiento de inversiones con predicción ML integrada. Desarrollada con Claude Code (~40% reducción del ciclo de entrega).",
-                description: "Plataforma web completa para el tracking de carteras de inversión que integra un módulo de predicción ML de precios (Scikit-learn + Prophet). El backend con FastAPI y JWT gestiona la lógica de negocio y expone los endpoints de predicción; el frontend en React/TypeScript consume la API y muestra visualizaciones en tiempo real. Desplegada en AWS con base de datos PostgreSQL. Desarrollada con Claude Code como copiloto, acelerando el ciclo de entrega en ~40% frente al flujo tradicional.",
+                subtitle: "Plataforma full-stack de seguimiento de carteras con módulo de predicción de precios integrado. Desarrollada con Claude Code como copiloto — ciclo de entrega ~40% más rápido.",
+                description: "Aplicación web completa para el tracking de inversiones personales que va más allá del registro contable: integra un módulo ML que genera predicciones de precio sobre los activos de la cartera usando Scikit-learn y Prophet. El backend en FastAPI expone tanto los endpoints de negocio como el servicio de inferencia; el frontend en React/TypeScript consume la API y muestra visualizaciones de rendimiento histórico y proyecciones. Todo el stack está containerizado con Docker y desplegado en AWS. El desarrollo se realizó con Claude Code como copiloto de código, reduciendo el tiempo de desarrollo estimado en aproximadamente un 40% frente a un flujo tradicional.",
                 features: [
-                    "Dashboard de cartera con rendimiento histórico y métricas clave",
-                    "Predicción de precios de activos con Scikit-learn y Prophet",
-                    "Autenticación JWT con sistema de usuarios multi-perfil",
-                    "API REST documentada con FastAPI y OpenAPI",
-                    "Despliegue en AWS (EC2 / RDS PostgreSQL) con Docker",
-                    "Ciclo de desarrollo acelerado ~40% con Claude Code como copiloto"
+                    "Dashboard de cartera con rendimiento histórico, distribución de activos y métricas de riesgo (volatilidad, drawdown)",
+                    "Predicción de precios con Scikit-learn (regresión) y Prophet (series temporales con estacionalidad)",
+                    "Backend FastAPI con autenticación JWT, endpoints documentados con OpenAPI/Swagger",
+                    "Base de datos PostgreSQL gestionada en AWS RDS con migraciones versionadas",
+                    "Frontend React + TypeScript con gráficos interactivos de evolución de cartera",
+                    "Containerización completa con Docker; despliegue en AWS EC2 + RDS",
+                    "Ciclo de desarrollo acelerado ~40% usando Claude Code como copiloto de código"
                 ],
                 tech: ["FastAPI", "React", "TypeScript", "PostgreSQL", "Scikit-learn", "Prophet", "Docker", "AWS", "JWT"],
                 responsibilities: [
-                    "Arquitectura de la aplicación y diseño de la API",
-                    "Desarrollo del modelo de predicción y su integración con el backend",
-                    "Implementación del frontend en React/TypeScript",
-                    "Configuración del entorno AWS y pipeline de despliegue",
-                    "Gestión del ciclo de desarrollo con Claude Code"
+                    "Definición de la arquitectura del sistema y diseño del modelo de datos",
+                    "Desarrollo del módulo de predicción ML y su exposición como microservicio en FastAPI",
+                    "Implementación del frontend React/TypeScript con gestión de estado y visualizaciones",
+                    "Configuración del entorno AWS (EC2, RDS) y pipeline de despliegue con Docker",
+                    "Integración de Claude Code en el flujo de desarrollo para generación y revisión de código"
                 ],
                 // TODO: add real repo URL
                 codeLink: "#"
@@ -165,48 +169,51 @@ const projectModal = {
             bigdata: {
                 tag: "Big Data · Arquitecturas Distribuidas",
                 title: "Pipeline Big Data & ML",
-                subtitle: "Pipelines ETL distribuidos con PySpark y Hadoop, con modelos ML aplicados sobre datos en escala.",
-                description: "Proyecto de arquitectura de datos a gran escala que implementa pipelines ETL distribuidos con PySpark sobre HDFS. Incluye optimización avanzada (particionado, broadcast joins, persistencia y tuning de rendimiento), procesamiento batch y streaming, y la aplicación de algoritmos ML (K-Means, árboles de decisión, regresión) sobre datasets reales con calidad de datos validada.",
+                subtitle: "Pipelines ETL distribuidos a escala con PySpark y Hadoop, modelos ML aplicados sobre datos reales y comparativa de arquitecturas Lambda vs. Kappa.",
+                description: "Proyecto de ingeniería de datos que aborda los retos del procesamiento a gran escala: diseño e implementación de pipelines ETL distribuidos con PySpark sobre un cluster Hadoop/HDFS, con foco en la optimización de rendimiento (particionado estratégico, broadcast joins para evitar shuffles costosos, persistencia de DataFrames intermedios y tuning de configuración Spark). Sobre los datos transformados se aplican algoritmos ML con Spark MLlib. El proyecto también implementa y compara las dos arquitecturas de referencia en Big Data: Lambda (batch + speed layer independientes) y Kappa (procesamiento unificado en streaming), evaluando sus trade-offs en latencia, complejidad operativa y consistencia de datos.",
                 features: [
-                    "Pipelines ETL distribuidos con PySpark sobre HDFS (Hadoop)",
-                    "Optimización avanzada: particionado, broadcast joins, persistencia y tuning de rendimiento",
-                    "K-Means clustering sobre datos de gran volumen",
-                    "Árboles de decisión y regresión con Spark MLlib",
-                    "Arquitectura Lambda (batch + speed layer) con validación de calidad de datos",
-                    "Arquitectura Kappa con procesamiento unificado en streaming"
+                    "Pipelines ETL distribuidos con PySpark sobre HDFS: ingesta, transformación y carga a escala",
+                    "Optimización avanzada: particionado estratégico, broadcast joins, persistencia de DataFrames, tuning de executor memory y parallelism",
+                    "K-Means clustering distribuido con Spark MLlib sobre datasets de volumen real",
+                    "Árboles de decisión y regresión lineal con validación cruzada distribuida",
+                    "Validación de calidad de datos: detección de nulos, outliers y drift en el pipeline",
+                    "Arquitectura Lambda: batch layer (HDFS + Spark) + speed layer (Spark Streaming) + serving layer",
+                    "Arquitectura Kappa: procesamiento unificado en streaming con estado persistente"
                 ],
-                tech: ["PySpark", "Apache Spark", "Hadoop", "HDFS", "Spark MLlib", "Python"],
+                tech: ["PySpark", "Apache Spark", "Hadoop", "HDFS", "Spark MLlib", "Spark Streaming", "Python"],
                 responsibilities: [
-                    "Diseño e implementación de los pipelines ETL distribuidos",
-                    "Configuración del cluster Hadoop y entorno Spark",
-                    "Implementación de modelos ML con Spark MLlib",
-                    "Comparativa de arquitecturas Lambda vs. Kappa",
-                    "Optimización de rendimiento en procesamiento distribuido"
+                    "Diseño e implementación de los pipelines ETL end-to-end",
+                    "Optimización de rendimiento a nivel de Spark (configuración, tuning, profiling)",
+                    "Implementación de modelos ML distribuidos con Spark MLlib",
+                    "Diseño y comparativa de arquitecturas Lambda y Kappa",
+                    "Análisis de trade-offs de rendimiento y consistencia entre ambas arquitecturas"
                 ],
                 // TODO: add real repo URL
                 codeLink: "#"
             },
 
             expense: {
-                tag: "Full-Stack · SaaS",
+                tag: "Full-Stack · Producto Real",
                 title: "Expense Tracker VTC",
-                subtitle: "Web app de gestión de gastos para una empresa de transporte real (VTC). En producción con usuarios reales.",
-                description: "Aplicación web desarrollada como solución real para una empresa de transporte privado. Permite registrar, categorizar y visualizar gastos operativos. El backend FastAPI conecta con Supabase (PostgreSQL gestionado + autenticación), el frontend React se despliega automáticamente en Vercel. La app está en uso por los conductores de la empresa.",
+                subtitle: "Aplicación de gestión financiera operativa desarrollada para un cliente real del sector transporte privado (VTC). En producción con usuarios activos.",
+                description: "Proyecto desarrollado como solución real para una empresa de transporte privado que necesitaba controlar sus gastos operativos (combustible, mantenimiento, peajes, seguros) por vehículo y conductor. La aplicación permite registrar y categorizar gastos, visualizar resúmenes mensuales y exportar informes contables. La arquitectura combina FastAPI como backend API, Supabase como BaaS (PostgreSQL gestionado + autenticación integrada + almacenamiento), React para la interfaz de usuario y Vercel para el despliegue continuo automático. El proyecto pasó por análisis de requisitos real con el cliente, iteraciones de diseño y está actualmente en uso por los conductores de la empresa.",
                 features: [
-                    "Registro y categorización de gastos por tipo y vehículo",
-                    "Dashboard de resumen mensual con visualizaciones",
-                    "Autenticación de usuarios con Supabase Auth",
-                    "Base de datos PostgreSQL gestionada en Supabase",
-                    "Despliegue continuo con Vercel (CI/CD automático)",
-                    "App en producción con usuarios reales"
+                    "Registro y categorización de gastos operativos por tipo, vehículo y conductor",
+                    "Panel financiero mensual con resúmenes, gráficos de distribución y comparativas",
+                    "Exportación de informes contables en formato estructurado",
+                    "Autenticación de usuarios con Supabase Auth (email + OAuth)",
+                    "Base de datos PostgreSQL gestionada en Supabase con Row Level Security (RLS)",
+                    "Despliegue continuo en Vercel con preview deployments por rama",
+                    "App en producción con usuarios reales — desarrollada para un cliente concreto"
                 ],
-                tech: ["FastAPI", "React", "Supabase", "PostgreSQL", "Vercel", "JavaScript"],
+                tech: ["FastAPI", "React", "JavaScript", "Supabase", "PostgreSQL", "Vercel"],
                 responsibilities: [
-                    "Análisis de requisitos con el cliente real",
-                    "Desarrollo del backend FastAPI y diseño del schema",
-                    "Implementación del frontend React con Supabase Auth",
-                    "Configuración del despliegue continuo en Vercel",
-                    "Mantenimiento y soporte post-lanzamiento"
+                    "Análisis de requisitos funcionales y técnicos con el cliente",
+                    "Diseño del schema de base de datos y configuración de RLS en Supabase",
+                    "Desarrollo del backend FastAPI y sus endpoints REST",
+                    "Implementación del frontend React con integración de Supabase Auth",
+                    "Configuración del pipeline de despliegue continuo en Vercel",
+                    "Iteraciones de mejora basadas en feedback de usuarios reales"
                 ],
                 // TODO: add real repo URL
                 codeLink: "#"
@@ -215,23 +222,25 @@ const projectModal = {
             nlp: {
                 tag: "NLP · Representaciones Vectoriales",
                 title: "Sistema NLP — Búsqueda Semántica en Español",
-                subtitle: "Sistema de recuperación semántica sobre corpus en español con comparativa de embeddings BERT vs. GloVe.",
-                description: "Proyecto de procesamiento del lenguaje natural que construye un sistema de búsqueda semántica sobre un corpus en español. Compara representaciones vectoriales de BERT (contextualizadas) frente a GloVe (estáticas), aplica reducción dimensional con PCA y t-SNE para análisis exploratorio, e implementa un pipeline completo de preprocesamiento, indexación y recuperación de documentos.",
+                subtitle: "Motor de recuperación semántica sobre corpus en español con análisis comparativo riguroso entre embeddings contextuales (BERT) y estáticos (GloVe).",
+                description: "Proyecto de NLP que construye un sistema de búsqueda semántica orientado al español, un idioma con menor cobertura que el inglés en los modelos preentrenados estándar. El núcleo del proyecto es la comparativa rigurosa entre dos familias de representaciones vectoriales: embeddings estáticos con GloVe (vectors entrenados sobre corpus en español) y embeddings contextuales con BERT fine-tuned en español (modelo BETO). El sistema implementa un pipeline completo: preprocesamiento del corpus, generación de representaciones, indexación semántica, recuperación de documentos por similitud coseno y evaluación con métricas de información retrieval. La reducción dimensional con PCA y t-SNE permite visualizar la estructura del espacio vectorial y analizar cómo cada modelo agrupa conceptos semánticamente relacionados.",
                 features: [
-                    "Pipeline de preprocesamiento NLP para corpus en español",
-                    "Embeddings contextualizados con BERT (HuggingFace Transformers)",
-                    "Embeddings estáticos con GloVe para corpus en español",
-                    "Reducción dimensional con PCA y t-SNE para visualización",
-                    "Evaluación de relevancia con métricas de recuperación (Precision@k, MRR)",
-                    "Comparativa cuantitativa BERT vs. GloVe en tareas de similitud semántica"
+                    "Pipeline de preprocesamiento NLP para español: tokenización, lematización, eliminación de stopwords y normalización",
+                    "Embeddings estáticos con GloVe entrenado sobre corpus en español (agregación por documento)",
+                    "Embeddings contextuales con BERT en español (BETO / multilingual BERT fine-tuned)",
+                    "Indexación semántica por similitud coseno sobre el espacio de embeddings",
+                    "Evaluación de relevancia con métricas de Information Retrieval: Precision@k, Recall@k y MRR (Mean Reciprocal Rank)",
+                    "Reducción dimensional con PCA (varianza explicada) y t-SNE (visualización 2D de clusters semánticos)",
+                    "Análisis comparativo cuantitativo y cualitativo: BERT vs. GloVe en tareas de similitud y recuperación"
                 ],
-                tech: ["Python", "BERT", "GloVe", "Transformers", "PCA", "t-SNE", "HuggingFace", "NumPy"],
+                tech: ["Python", "BERT", "GloVe", "HuggingFace Transformers", "Scikit-learn", "PCA", "t-SNE", "NumPy", "NLTK"],
                 responsibilities: [
-                    "Diseño del pipeline de preprocesamiento para español",
-                    "Fine-tuning de embeddings y construcción del índice semántico",
-                    "Análisis exploratorio con PCA y t-SNE",
-                    "Evaluación cuantitativa de ambos sistemas de embedding",
-                    "Documentación de resultados y conclusiones"
+                    "Diseño del pipeline NLP end-to-end para corpus en español",
+                    "Selección e integración de modelos preentrenados (BETO, GloVe-es)",
+                    "Implementación del motor de recuperación semántica por similitud coseno",
+                    "Definición del protocolo de evaluación con métricas de IR",
+                    "Análisis exploratorio del espacio vectorial con PCA y t-SNE",
+                    "Redacción del informe comparativo con conclusiones sobre el comportamiento de cada representación"
                 ],
                 // TODO: add real repo URL
                 codeLink: "#"
