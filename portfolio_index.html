@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Javier Hortigüela Valiente - Desarrollador Full Stack y Especialista en Soporte IT">
-    <meta name="keywords" content="desarrollador, full stack, PHP, JavaScript, React, portfolio">
+    <meta name="description" content="Javier Hortigüela — Data Engineer & ML Engineer especializado en pipelines distribuidos con PySpark, modelos ML en producción y APIs de inferencia. Valencia, España.">
+    <meta name="keywords" content="data engineer, ML engineer, PySpark, MLflow, FastAPI, Python, Big Data, machine learning, Valencia">
     <meta name="author" content="Javier Hortigüela Valiente">
-    <title>Javier Hortigüela Valiente - Portfolio</title>
+    <meta property="og:title" content="Javier Hortigüela — Data Engineer & ML Engineer">
+    <meta property="og:description" content="Pipelines distribuidos, modelos ML en producción, AI-augmented development. Valencia, España.">
+    <meta property="og:url" content="https://lightskinhorti.github.io/Portfolio/portfolio_index.html">
+    <!-- TODO: add og:image once hero screenshot is available (recommended 1200x630) -->
+    <meta property="og:type" content="website">
+    <title>Javier Hortigüela — Data Engineer & ML Engineer</title>
+    <!-- SVG favicon with JH initials -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D4F6B'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='system-ui,sans-serif' font-size='13' font-weight='700' fill='white'>JH</text></svg>">
     <link rel="stylesheet" href="portfolio_css.css">
 </head>
 <body>
@@ -18,23 +25,26 @@
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#experiencia">Experiencia</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#educacion">Educación</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
+            <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
         </div>
     </nav>
 
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <div class="hero-tag">👋 Disponible para nuevos proyectos</div>
+            <div class="hero-tag">Disponible para nuevas oportunidades</div>
             <h1>Javier Hortigüela</h1>
-            <h2>Desarrollador Full Stack & Especialista en Soporte IT</h2>
+            <h2>Data Engineer &amp; ML Engineer</h2>
+            <p class="hero-tagline">Pipelines distribuidos, modelos en producción, AI-augmented development.</p>
             <div class="hero-buttons">
                 <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                <a href="CV_Javier_Hortiguela_2026.pdf" class="btn btn-cv" download>Descargar CV</a>
                 <a href="#contacto" class="btn btn-secondary">Contactar</a>
             </div>
-            <!-- Agregar redes sociales con SVG -->
             <div class="hero-social">
-                <a href="https://www.linkedin.com/in/javier-hortig%C3%BCela-valiente-12a539277" target="_blank" class="social-btn linkedin" title="LinkedIn">
+                <a href="https://es.linkedin.com/in/javierhortiguela" target="_blank" class="social-btn linkedin" title="LinkedIn">
                     <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
@@ -51,61 +61,191 @@
     </section>
 
     <div class="main-content">
+
+        <!-- PROJECTS -->
         <section class="container" id="proyectos">
             <div class="section-header">
-                <div class="section-tag">💼 Mis Proyectos</div>
+                <div class="section-tag">Proyectos</div>
                 <h2 class="section-title">Proyectos Destacados</h2>
-                <p class="section-subtitle">Soluciones innovadoras que combinan tecnología y creatividad</p>
+                <p class="section-subtitle">Proyectos de datos, ML y sistemas reales en producción</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-project="erp">
-                    <div class="project-image">📊</div>
+
+                <!-- Featured project: TFM -->
+                <div class="project-card featured" data-project="tfm">
+                    <div class="project-image">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+                            <circle cx="40" cy="40" r="35" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                            <path d="M20 50 Q30 25 40 30 Q50 35 60 20" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                            <circle cx="60" cy="20" r="4" fill="rgba(6,182,212,0.8)"/>
+                            <path d="M15 55 L65 55" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                            <text x="40" y="70" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="8" font-family="system-ui">RUL Prediction</text>
+                        </svg>
+                    </div>
                     <div class="project-content">
-                        <span class="project-tag">TFG - Trabajo Fin de Grado</span>
-                        <h3>Sistema ERP Empresarial</h3>
-                        <p>Desarrollo completo de un sistema de planificación de recursos empresariales (ERP) diseñado para optimizar la gestión de operaciones, inventario, facturación y recursos humanos.</p>
+                        <span class="project-tag">TFM — Máster IA &amp; Big Data</span>
+                        <h3>Mantenimiento Predictivo — NASA CMAPSS</h3>
+                        <p>Pipeline ML end-to-end para predecir la vida útil restante (RUL) de motores turbofan sobre los 4 subsets del benchmark aeroespacial NASA CMAPSS. EDA distribuido con PySpark, feature engineering avanzado (rolling stats, lag features), benchmark de modelos con tracking completo en MLflow, y API de inferencia desplegada con FastAPI + Streamlit en Docker.</p>
                         <div class="project-tech">
-                            <span class="tech-badge">Java</span>
-                            <span class="tech-badge">Spring Boot</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">PySpark</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">MLflow</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">Streamlit</span>
                             <span class="tech-badge">Docker</span>
                         </div>
-                        <a href="#erp-details" class="project-link view-details">Ver detalles →</a>
+                        <!-- TODO: add real repo URL -->
+                        <a href="#" class="project-link view-details">Ver detalles &#8594;</a>
                     </div>
                 </div>
-        
-                <!-- Agregar mas proyectos  -->
+
+                <!-- Investment Tracker -->
+                <div class="project-card" data-project="investment">
+                    <div class="project-image">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+                            <rect x="10" y="45" width="12" height="25" rx="2" fill="rgba(255,255,255,0.4)"/>
+                            <rect x="28" y="30" width="12" height="40" rx="2" fill="rgba(255,255,255,0.6)"/>
+                            <rect x="46" y="18" width="12" height="52" rx="2" fill="rgba(6,182,212,0.7)"/>
+                            <path d="M10 42 L22 32 L40 22 L58 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Full-Stack · ML · Cloud</span>
+                        <h3>Investment Tracker</h3>
+                        <p>Plataforma de seguimiento de carteras con predicción de precios integrada (Scikit-learn + Prophet). Backend FastAPI con autenticación JWT, frontend React/TypeScript, PostgreSQL en AWS. Desarrollada con Claude Code como copiloto — ciclo de entrega ~40% más rápido frente al flujo tradicional.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">AWS</span>
+                        </div>
+                        <!-- TODO: add real repo URL -->
+                        <a href="#" class="project-link view-details">Ver detalles &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- Pipeline Big Data & ML -->
+                <div class="project-card" data-project="bigdata">
+                    <div class="project-image">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+                            <ellipse cx="40" cy="20" rx="28" ry="10" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="rgba(255,255,255,0.05)"/>
+                            <ellipse cx="40" cy="40" rx="28" ry="10" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.05)"/>
+                            <ellipse cx="40" cy="60" rx="28" ry="10" stroke="rgba(6,182,212,0.6)" stroke-width="2" fill="rgba(6,182,212,0.05)"/>
+                            <line x1="12" y1="20" x2="12" y2="60" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <line x1="68" y1="20" x2="68" y2="60" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Big Data · Arquitecturas Distribuidas</span>
+                        <h3>Pipeline Big Data &amp; ML</h3>
+                        <p>Pipelines ETL distribuidos con PySpark sobre HDFS con optimización avanzada: particionado, broadcast joins y tuning de rendimiento. K-Means, árboles de decisión y regresión con Spark MLlib. Arquitecturas Lambda y Kappa implementadas sobre datos reales.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">PySpark</span>
+                            <span class="tech-badge">Apache Spark</span>
+                            <span class="tech-badge">Hadoop</span>
+                            <span class="tech-badge">Python</span>
+                        </div>
+                        <!-- TODO: add real repo URL -->
+                        <a href="#" class="project-link view-details">Ver detalles &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- Expense Tracker -->
+                <div class="project-card" data-project="expense">
+                    <div class="project-image">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+                            <rect x="12" y="15" width="56" height="50" rx="6" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.05)"/>
+                            <line x1="12" y1="28" x2="68" y2="28" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <rect x="20" y="36" width="16" height="8" rx="2" fill="rgba(6,182,212,0.5)"/>
+                            <rect x="20" y="50" width="24" height="8" rx="2" fill="rgba(255,255,255,0.2)"/>
+                            <rect x="48" y="36" width="12" height="22" rx="2" fill="rgba(255,255,255,0.15)"/>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Full-Stack · SaaS</span>
+                        <h3>Expense Tracker VTC</h3>
+                        <p>Web app de gestión de gastos construida para un cliente real del sector transporte privado. Panel financiero con categorización de gastos, exportación de informes y autenticación propia. Arquitectura FastAPI + Supabase (BaaS) + Vercel — en producción con usuarios reales.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Supabase</span>
+                            <span class="tech-badge">Vercel</span>
+                        </div>
+                        <!-- TODO: add real repo URL -->
+                        <a href="#" class="project-link view-details">Ver detalles &#8594;</a>
+                    </div>
+                </div>
+
+                <!-- NLP -->
+                <div class="project-card" data-project="nlp">
+                    <div class="project-image">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+                            <circle cx="25" cy="30" r="6" fill="rgba(6,182,212,0.6)"/>
+                            <circle cx="50" cy="20" r="5" fill="rgba(255,255,255,0.4)"/>
+                            <circle cx="60" cy="45" r="7" fill="rgba(255,255,255,0.3)"/>
+                            <circle cx="30" cy="55" r="5" fill="rgba(6,182,212,0.4)"/>
+                            <circle cx="50" cy="58" r="4" fill="rgba(255,255,255,0.25)"/>
+                            <line x1="25" y1="30" x2="50" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                            <line x1="50" y1="20" x2="60" y2="45" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                            <line x1="25" y1="30" x2="30" y2="55" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+                            <line x1="60" y1="45" x2="50" y2="58" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                            <line x1="30" y1="55" x2="50" y2="58" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">NLP · Representaciones Vectoriales</span>
+                        <h3>Sistema NLP — Búsqueda Semántica</h3>
+                        <p>Motor de recuperación semántica sobre corpus en español con análisis comparativo de embeddings: BERT fine-tuned (contextuales) vs. GloVe (estáticos). Reducción dimensional con PCA y t-SNE, evaluación con Precision@k y MRR, pipeline completo de preprocesamiento y ranking de documentos.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">BERT</span>
+                            <span class="tech-badge">GloVe</span>
+                            <span class="tech-badge">Transformers</span>
+                            <span class="tech-badge">PCA</span>
+                            <span class="tech-badge">t-SNE</span>
+                        </div>
+                        <!-- TODO: add real repo URL -->
+                        <a href="#" class="project-link view-details">Ver detalles &#8594;</a>
+                    </div>
+                </div>
+
             </div>
         </section>
-        
-        <!-- Modal para detalles del proyecto -->
+
+        <!-- Modal for project details -->
         <div id="project-modal" class="modal">
             <div class="modal-content">
                 <span class="close-modal">&times;</span>
                 <div id="modal-body">
-                    <!-- El contenido se cargará dinámicamente -->
+                    <!-- Loaded dynamically by JS -->
                 </div>
             </div>
         </div>
 
+        <!-- EXPERIENCE -->
         <section class="container" id="experiencia">
             <div class="section-header">
-                <div class="section-tag">💼 Trayectoria</div>
+                <div class="section-tag">Trayectoria</div>
                 <h2 class="section-title">Experiencia Laboral</h2>
-                <p class="section-subtitle">Un recorrido profesional marcado por la excelencia técnica</p>
+                <p class="section-subtitle">Entornos enterprise internacionales — Volkswagen Group, Indra</p>
             </div>
             <div class="timeline">
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Digitec Media</h3>
-                        <div class="timeline-date">Técnico de Soporte y Desarrollo</div>
+                        <span class="timeline-company">Powerco — Volkswagen Group</span>
+                        <h3>Senior IT Technician / Data Analyst</h3>
+                        <div class="timeline-date">Oct 2024 – Mar 2025</div>
                         <ul>
-                            <li>Desarrollo web con PHP y JavaScript</li>
-                            <li>Soporte Microsoft 365 y equipos informáticos</li>
-                            <li>Configuración de redes e instalaciones</li>
-                            <li>Optimización de procesos tecnológicos</li>
+                            <li>Gestión y análisis de inventario de 179+ dispositivos en dos plantas industriales; automatización con Python/pandas, eliminando procesos manuales de validación cruzada</li>
+                            <li>Dashboards ejecutivos en Power BI para seguimiento del rollout de laptops — reducción del reporting manual en ~60%</li>
+                            <li>AI-augmented development con Claude Code para automatización de tareas de inventario y generación de scripts de análisis</li>
                         </ul>
                     </div>
                 </div>
@@ -113,12 +253,13 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Indra - Elecciones El Salvador</h3>
-                        <div class="timeline-date">Coordinador de Soporte Remoto (N2)</div>
+                        <span class="timeline-company">Minsait — Indra</span>
+                        <h3>Soporte Técnico N1 &amp; Coordinador Electoral</h3>
+                        <div class="timeline-date">Jun 2023 – Mar 2025</div>
                         <ul>
-                            <li>Coordinación de equipos técnicos remotos y de campo</li>
-                            <li>Soporte durante simulacro y elecciones oficiales</li>
-                            <li>Gestión de votación internacional</li>
+                            <li>Coordinador de soporte técnico remoto para las elecciones presidenciales de El Salvador — gestión de equipo de técnicos de campo, soporte a ciudadanos en el exterior, impacto a escala nacional</li>
+                            <li>Help Desk para cliente ADB (Filipinas) con ServiceNow en entorno de alta presión; comunicación íntegra en inglés</li>
+                            <li>Soporte en proyectos enterprise: Inditex Canadá (Black Friday), Telefónica T-Tech</li>
                         </ul>
                     </div>
                 </div>
@@ -126,142 +267,186 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Indra - Inditex Canadá</h3>
-                        <div class="timeline-date">Soporte de Aplicaciones</div>
+                        <span class="timeline-company">Digitech Media</span>
+                        <h3>Desarrollador de Software y Web</h3>
+                        <div class="timeline-date">Mar 2023 – Ago 2023</div>
                         <ul>
-                            <li>Soporte aplicación Sisu durante Black Friday</li>
-                            <li>Trabajo en entorno internacional angloparlante</li>
-                            <li>Gestión de incidencias en alta demanda</li>
+                            <li>Desarrollo web con PHP y JavaScript para clientes empresariales</li>
+                            <li>Configuración de sistemas Microsoft 365 e infraestructura de red</li>
+                            <li>Optimización de procesos tecnológicos internos</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Indra - Telefónica T-Tech</h3>
-                        <div class="timeline-date">Técnico de Proyecto</div>
-                        <ul>
-                            <li>Gestión de hilos musicales</li>
-                            <li>Soporte técnico a clientes y técnicos</li>
-                            <li>Administración de cámaras de aforo</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Indra - Cliente ADB</h3>
-                        <div class="timeline-date">Técnico Help Desk</div>
-                        <ul>
-                            <li>Soporte para cliente en Filipinas</li>
-                            <li>Uso de ServiceNow y Remedy</li>
-                            <li>Trabajo multicultural en inglés</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </section>
 
+        <!-- SKILLS -->
         <section class="container" id="habilidades">
             <div class="section-header">
-                <div class="section-tag">🚀 Competencias</div>
+                <div class="section-tag">Competencias</div>
                 <h2 class="section-title">Habilidades Técnicas</h2>
-                <p class="section-subtitle">Experiencia en tecnologías modernas y herramientas profesionales</p>
+                <p class="section-subtitle">Cada habilidad listada conecta con al menos un proyecto en producción</p>
             </div>
             <div class="skills-grid">
+
                 <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h4>Frontend Development</h4>
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h4>Lenguajes</h4>
                     <ul>
-                        <li>HTML5, CSS3, JavaScript (ES6+)</li>
-                        <li>React.js y Angular</li>
-                        <li>Diseño Responsive</li>
-                        <li>PHP, XML, JSON</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>TypeScript · JavaScript</li>
+                        <li>Java · PHP · Bash</li>
                     </ul>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h4>Backend Development</h4>
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <h4>Data &amp; ML</h4>
                     <ul>
-                        <li>Python, Java, C</li>
-                        <li>Node.js y Spring Boot</li>
-                        <li>APIs RESTful</li>
-                        <li>Arquitectura escalable</li>
+                        <li>PySpark · Apache Spark</li>
+                        <li>pandas · Scikit-learn · XGBoost</li>
+                        <li>MLflow · CRISP-DM</li>
+                        <li>Power BI</li>
                     </ul>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">🗄️</div>
-                    <h4>Bases de Datos</h4>
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <h4>NLP &amp; Deep Learning</h4>
                     <ul>
-                        <li>PostgreSQL y MySQL</li>
-                        <li>MongoDB (NoSQL)</li>
-                        <li>Diseño de esquemas</li>
-                        <li>Optimización de queries</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">☁️</div>
-                    <h4>DevOps & Cloud</h4>
-                    <ul>
-                        <li>Docker y contenedores</li>
-                        <li>AWS y Azure</li>
-                        <li>Git/GitHub</li>
-                        <li>CI/CD básico</li>
+                        <li>BERT · GloVe · Transformers</li>
+                        <li>Keras / TensorFlow</li>
+                        <li>RNN · LSTM · GRU</li>
+                        <li>PCA · t-SNE</li>
                     </ul>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">🛠️</div>
-                    <h4>IT Support</h4>
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <h4>Backend &amp; APIs</h4>
                     <ul>
-                        <li>Microsoft 365</li>
-                        <li>ServiceNow y Remedy</li>
-                        <li>Hardware y redes</li>
-                        <li>Soporte Help Desk</li>
+                        <li>FastAPI · Node.js</li>
+                        <li>REST APIs · GraphQL</li>
+                        <li>JWT · Microservicios</li>
                     </ul>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
-                    <h4>Metodologías & IA</h4>
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <h4>Frontend &amp; Bases de Datos</h4>
                     <ul>
-                        <li>Scrum y Kanban</li>
-                        <li>Herramientas de IA</li>
-                        <li>Big Data (Hadoop, Spark)</li>
-                        <li>Automatización</li>
+                        <li>React · TypeScript · HTML/CSS</li>
+                        <li>PostgreSQL · MongoDB</li>
+                        <li>MySQL · Supabase</li>
                     </ul>
                 </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>DevOps, Cloud &amp; AI Dev</h4>
+                    <ul>
+                        <li>Docker · Kubernetes</li>
+                        <li>CI/CD · GitHub Actions</li>
+                        <li>AWS · Azure · Vercel</li>
+                        <li>Claude Code · Cursor</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
-    </div>
 
+        <!-- EDUCATION -->
+        <section class="container" id="educacion">
+            <div class="section-header">
+                <div class="section-tag">Formación</div>
+                <h2 class="section-title">Educación</h2>
+                <p class="section-subtitle">Formación técnica progresiva orientada a datos e inteligencia artificial</p>
+            </div>
+            <div class="education-grid">
+
+                <div class="education-card">
+                    <div class="education-year">
+                        <span>Oct 2025 – Jun 2026</span>
+                        <span class="education-status">En curso</span>
+                    </div>
+                    <h4>Máster en Inteligencia Artificial y Big Data</h4>
+                    <p>Especialización en pipelines distribuidos, modelos ML/DL, NLP y despliegue de sistemas de IA en producción.</p>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-year">Sep 2023 – Jun 2025</div>
+                    <h4>Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h4>
+                    <p>Desarrollo de software, bases de datos, arquitecturas backend y sistemas multiplataforma.</p>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-year">Sep 2021 – Jun 2023</div>
+                    <h4>Técnico en Sistemas Microinformáticos y Redes (SMR)</h4>
+                    <p>Fundamentos de redes, sistemas operativos, administración de infraestructura IT.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </div><!-- end .main-content -->
+
+    <!-- CONTACT -->
     <section class="contact-section" id="contacto">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">📬 Conecta</div>
+                <div class="section-tag">Contacto</div>
                 <h2 class="section-title">Trabajemos Juntos</h2>
-                <p class="section-subtitle">¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte</p>
+                <p class="section-subtitle">Abierto a roles de Data Engineer o ML Engineer. Disponibilidad inmediata.</p>
             </div>
             <div class="contact-cards">
                 <div class="contact-card">
-                    <div class="contact-icon">📧</div>
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
                     <h4>Email</h4>
                     <p><a href="mailto:hortiguelavaliente@gmail.com">hortiguelavaliente@gmail.com</a></p>
                 </div>
                 <div class="contact-card">
-                    <div class="contact-icon">📱</div>
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.7a16 16 0 0 0 7.39 7.39l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
                     <h4>Teléfono</h4>
-                    <p>611 408 212</p>
+                    <p><a href="tel:+34611408212">611 408 212</a></p>
                 </div>
                 <div class="contact-card">
-                    <div class="contact-icon">📍</div>
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
                     <h4>Ubicación</h4>
                     <p>Massamagrell, Valencia, España</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </div>
+                    <h4>LinkedIn</h4>
+                    <p><a href="https://es.linkedin.com/in/javierhortiguela" target="_blank">javierhortiguela</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </div>
+                    <h4>GitHub</h4>
+                    <p><a href="https://github.com/lightskinhorti" target="_blank">lightskinhorti</a></p>
                 </div>
             </div>
         </div>
@@ -269,7 +454,7 @@
 
     <footer>
         <div class="footer-social">
-            <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="social-btn linkedin" title="LinkedIn">
+            <a href="https://es.linkedin.com/in/javierhortiguela" target="_blank" class="social-btn linkedin" title="LinkedIn">
                 <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
@@ -280,7 +465,7 @@
                 </svg>
             </a>
         </div>
-        <p>&copy; 2025 Javier Hortigüela Valiente. Desarrollado con pasión y código limpio.</p>
+        <p>&copy; 2026 Javier Hortigüela Valiente — Data Engineer &amp; ML Engineer · Valencia, España</p>
     </footer>
 
     <script src="portfolio_js.js"></script>
