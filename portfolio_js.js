@@ -162,8 +162,7 @@ El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySp
                     "Configuración del entorno AWS (EC2, RDS) y pipeline de despliegue con Docker",
                     "Integración de Claude Code en el flujo de desarrollo para generación y revisión de código"
                 ],
-                // TODO: add real repo URL
-                codeLink: "#"
+                codeLink: "https://github.com/lightskinhorti/Trading-App-Tracker"
             },
 
             bigdata: {
@@ -215,8 +214,7 @@ El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySp
                     "Configuración del pipeline de despliegue continuo en Vercel",
                     "Iteraciones de mejora basadas en feedback de usuarios reales"
                 ],
-                // TODO: add real repo URL
-                codeLink: "#"
+                codeLink: "https://github.com/lightskinhorti/AppVTC"
             },
 
             nlp: {
