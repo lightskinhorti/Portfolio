@@ -117,23 +117,21 @@ const projectModal = {
                 title: "Mantenimiento Predictivo — NASA CMAPSS",
                 subtitle: "Pipeline ML end-to-end para predicción de vida útil residual (RUL) en motores turbofan sobre el benchmark aeroespacial NASA CMAPSS — estándar de referencia en la industria de mantenimiento predictivo.",
                 description: `El dataset NASA CMAPSS (Commercial Modular Aero-Propulsion System Simulation) es el benchmark más utilizado en investigación de mantenimiento predictivo aeroespacial. Consta de 4 subsets (FD001–FD004) que simulan distintos modos de fallo y condiciones operativas, con más de 20 000 ciclos de motor registrados por 21 sensores cada uno. El objetivo es predecir el RUL (Remaining Useful Life) como un problema de regresión supervisada: dado el histórico de señales de un motor, estimar cuántos ciclos le quedan antes de fallo. <br><br>
-El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySpark, pasando por feature engineering avanzado, entrenamiento con experiment tracking en MLflow, hasta el despliegue de una API de inferencia en FastAPI y una UI interactiva en Streamlit, todo containerizado con Docker.`,
+El proyecto está implementado como un notebook de análisis en Google Colab y cubre el ciclo completo: ingesta y EDA distribuido con PySpark, feature engineering avanzado sobre los 4 subsets, benchmark de modelos supervisados con experiment tracking en MLflow, y análisis de interpretabilidad orientado a contexto industrial de mantenimiento predictivo.`,
                 features: [
                     "Ingesta y EDA distribuido con PySpark sobre los 4 subsets CMAPSS (FD001–FD004) con distintas condiciones operativas y modos de fallo",
                     "Feature engineering avanzado: rolling statistics (media, desviación estándar en ventanas deslizantes), lag features por ciclo y normalización por unidad operativa",
                     "Benchmark de 4 modelos supervisados: XGBoost, Random Forest, SVR y Gradient Boosting — evaluados con RMSE, MAE y la función de scoring asimétrico propia de NASA (penaliza más las predicciones tardías)",
                     "Experiment tracking completo con MLflow: logging de hiperparámetros, métricas por fold, artifacts y registro del modelo campeón en el Model Registry",
-                    "API de inferencia REST con FastAPI: endpoint /predict que acepta secuencias de sensores y devuelve RUL estimado con intervalo de confianza",
-                    "Dashboard interactivo en Streamlit: visualización de degradación del motor, curva de RUL predicha vs real y análisis de feature importance",
-                    "Pipeline containerizado end-to-end con Docker Compose para reproducibilidad total del entorno"
+                    "Análisis de feature importance e interpretabilidad del modelo en contexto industrial aeroespacial",
+                    "Validación cruzada y análisis de error por subset operativo para medir robustez del modelo ante distintas condiciones de vuelo"
                 ],
-                tech: ["Python", "PySpark", "Scikit-learn", "XGBoost", "MLflow", "FastAPI", "Streamlit", "Docker", "pandas", "NumPy"],
+                tech: ["Python", "PySpark", "Scikit-learn", "XGBoost", "MLflow", "pandas", "NumPy", "Matplotlib", "Google Colab"],
                 responsibilities: [
-                    "Diseño de la arquitectura completa del pipeline ML (ingesta → features → train → serving)",
+                    "Diseño de la arquitectura completa del pipeline ML (ingesta → features → train → evaluación)",
                     "Implementación del EDA distribuido y feature engineering con PySpark",
-                    "Entrenamiento, tuning de hiperparámetros y selección del modelo con MLflow como sistema de registro",
-                    "Desarrollo de la API de inferencia (FastAPI) y la interfaz de exploración (Streamlit)",
-                    "Análisis de feature importance e interpretabilidad del modelo en contexto industrial",
+                    "Entrenamiento, tuning de hiperparámetros y selección del modelo campeón con MLflow",
+                    "Análisis de feature importance e interpretabilidad orientado a mantenimiento industrial",
                     "Documentación técnica del proyecto y defensa ante el tribunal del máster"
                 ],
                 codeLink: "https://github.com/lightskinhorti/TFM_CMAPSS-FD001"
@@ -161,6 +159,13 @@ El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySp
                     "Desarrollo del frontend React/TypeScript: dashboard, gráficas interactivas, indicadores técnicos RSI/SMA y benchmarks",
                     "Configuración del entorno AWS (EC2 + RDS PostgreSQL) y containerización con Docker",
                     "Integración de Claude Code en el flujo de desarrollo para generación y revisión de código"
+                ],
+                screenshots: [
+                    { src: "img/investment-portfolio.png", caption: "Dashboard de cartera — P&L en tiempo real" },
+                    { src: "img/investment-indicators.png", caption: "Análisis técnico — RSI y SMA" },
+                    { src: "img/investment-price.png", caption: "Gráfica de precio interactiva con overlay de medias" },
+                    { src: "img/investment-benchmarks.png", caption: "Rendimiento vs S&P 500 y Bitcoin" },
+                    { src: "img/investment-ml.png", caption: "Predicción ML — intervalo de confianza y score" }
                 ],
                 codeLink: "https://github.com/lightskinhorti/Trading-App-Tracker"
             },
@@ -226,6 +231,20 @@ El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySp
             ? `<a href="${project.codeLink}" class="btn btn-primary" target="_blank">Ver Código en GitHub</a>`
             : `<a href="https://github.com/lightskinhorti" class="btn btn-secondary" target="_blank">Ver GitHub</a>`;
 
+        const screenshotsHtml = project.screenshots ? `
+            <div class="modal-screenshots">
+                <h4>Capturas de pantalla</h4>
+                <div class="screenshots-grid">
+                    ${project.screenshots.map(s => `
+                        <figure class="screenshot-item">
+                            <img src="${s.src}" alt="${s.caption}" loading="lazy" onerror="this.closest('figure').style.display='none'">
+                            <figcaption>${s.caption}</figcaption>
+                        </figure>
+                    `).join('')}
+                </div>
+            </div>
+        ` : '';
+
         return `
             <div class="modal-body">
                 <div class="modal-header">
@@ -233,6 +252,8 @@ El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySp
                     <h2 class="modal-title">${project.title}</h2>
                     <p class="modal-subtitle">${project.subtitle}</p>
                 </div>
+
+                ${screenshotsHtml}
 
                 <div class="modal-grid">
                     <div class="modal-features">

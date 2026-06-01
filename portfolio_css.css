@@ -1113,12 +1113,57 @@ footer {
     color: white;
 }
 
+.modal-screenshots {
+    margin: 2rem 0 2.5rem;
+}
+
+.modal-screenshots h4 {
+    color: var(--dark);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.screenshot-item {
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    background: var(--light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.screenshot-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(13, 79, 107, 0.12);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.screenshot-item figcaption {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.82rem;
+    color: var(--gray);
+    line-height: 1.4;
+}
+
 @media (max-width: 768px) {
     .modal { padding: 1rem; }
     .modal-body { padding: 2rem 1.5rem; }
     .modal-grid { grid-template-columns: 1fr; gap: 2rem; margin: 2rem 0; }
     .modal-title { font-size: 1.8rem; }
     .modal-links .btn { flex: 1; min-width: 140px; }
+    .screenshots-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 480px) {
