@@ -161,11 +161,11 @@ El proyecto está implementado como un notebook de análisis en Google Colab y c
                     "Integración de Claude Code en el flujo de desarrollo para generación y revisión de código"
                 ],
                 screenshots: [
-                    { src: "img/investment-portfolio.png", caption: "Dashboard de cartera — P&L en tiempo real" },
-                    { src: "img/investment-indicators.png", caption: "Análisis técnico — RSI y SMA" },
-                    { src: "img/investment-price.png", caption: "Gráfica de precio interactiva con overlay de medias" },
-                    { src: "img/investment-benchmarks.png", caption: "Rendimiento vs S&P 500 y Bitcoin" },
-                    { src: "img/investment-ml.png", caption: "Predicción ML — intervalo de confianza y score" }
+                    { src: "img/Captura de pantalla 2026-06-01 221530.png", caption: "Dashboard de cartera — P&L en tiempo real" },
+                    { src: "img/Captura de pantalla 2026-06-01 221543.png", caption: "Análisis de precio — SMA 20/50 y timeframes" },
+                    { src: "img/Captura de pantalla 2026-06-01 221553.png", caption: "Indicadores técnicos — RSI 14 períodos y señales" },
+                    { src: "img/Captura de pantalla 2026-06-01 221602.png", caption: "Rendimiento vs S&P 500 y Bitcoin (base 100)" },
+                    { src: "img/Captura de pantalla 2026-06-01 221609.png", caption: "Predicción ML — intervalo de confianza y score" }
                 ],
                 codeLink: "https://github.com/lightskinhorti/Trading-App-Tracker"
             },
