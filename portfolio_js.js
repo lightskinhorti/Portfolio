@@ -191,32 +191,6 @@ El proyecto cubre el ciclo completo: desde la ingesta y EDA distribuido con PySp
                 codeLink: "#"
             },
 
-            expense: {
-                tag: "Full-Stack · Producto Real",
-                title: "Expense Tracker VTC",
-                subtitle: "Aplicación de gestión financiera operativa desarrollada para un cliente real del sector transporte privado (VTC). En producción con usuarios activos.",
-                description: "Proyecto desarrollado como solución real para una empresa de transporte privado que necesitaba controlar sus gastos operativos (combustible, mantenimiento, peajes, seguros) por vehículo y conductor. La aplicación permite registrar y categorizar gastos, visualizar resúmenes mensuales y exportar informes contables. La arquitectura combina FastAPI como backend API, Supabase como BaaS (PostgreSQL gestionado + autenticación integrada + almacenamiento), React para la interfaz de usuario y Vercel para el despliegue continuo automático. El proyecto pasó por análisis de requisitos real con el cliente, iteraciones de diseño y está actualmente en uso por los conductores de la empresa.",
-                features: [
-                    "Registro y categorización de gastos operativos por tipo, vehículo y conductor",
-                    "Panel financiero mensual con resúmenes, gráficos de distribución y comparativas",
-                    "Exportación de informes contables en formato estructurado",
-                    "Autenticación de usuarios con Supabase Auth (email + OAuth)",
-                    "Base de datos PostgreSQL gestionada en Supabase con Row Level Security (RLS)",
-                    "Despliegue continuo en Vercel con preview deployments por rama",
-                    "App en producción con usuarios reales — desarrollada para un cliente concreto"
-                ],
-                tech: ["FastAPI", "React", "JavaScript", "Supabase", "PostgreSQL", "Vercel"],
-                responsibilities: [
-                    "Análisis de requisitos funcionales y técnicos con el cliente",
-                    "Diseño del schema de base de datos y configuración de RLS en Supabase",
-                    "Desarrollo del backend FastAPI y sus endpoints REST",
-                    "Implementación del frontend React con integración de Supabase Auth",
-                    "Configuración del pipeline de despliegue continuo en Vercel",
-                    "Iteraciones de mejora basadas en feedback de usuarios reales"
-                ],
-                codeLink: "https://github.com/lightskinhorti/AppVTC"
-            },
-
             nlp: {
                 tag: "NLP · Representaciones Vectoriales",
                 title: "Sistema NLP — Búsqueda Semántica en Español",

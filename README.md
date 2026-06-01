@@ -19,7 +19,6 @@ Static site — HTML5 · CSS3 · JavaScript vanilla. Sin frameworks, sin depende
 | Mantenimiento Predictivo — NASA CMAPSS | PySpark · XGBoost · MLflow · FastAPI · Docker | [TFM_CMAPSS-FD001](https://github.com/lightskinhorti/TFM_CMAPSS-FD001) |
 | Investment Tracker | FastAPI · React · TypeScript · PostgreSQL · AWS | [Trading-App-Tracker](https://github.com/lightskinhorti/Trading-App-Tracker) |
 | Pipeline Big Data & ML | PySpark · Spark MLlib · Hadoop | — |
-| Expense Tracker VTC | FastAPI · React · Supabase · Vercel | [AppVTC](https://github.com/lightskinhorti/AppVTC) |
 | Sistema NLP — Búsqueda Semántica | BERT · GloVe · Transformers · PCA · t-SNE | — |
 
 ## Contacto
