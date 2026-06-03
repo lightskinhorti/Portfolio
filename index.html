@@ -129,61 +129,66 @@
                     </div>
                 </div>
 
-                <!-- Pipeline Big Data & ML -->
-                <div class="project-card" data-project="bigdata">
+                <!-- AI Agent with Tool Use -->
+                <div class="project-card" data-project="agent">
                     <div class="project-image">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
-                            <ellipse cx="40" cy="20" rx="28" ry="10" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="rgba(255,255,255,0.05)"/>
-                            <ellipse cx="40" cy="40" rx="28" ry="10" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.05)"/>
-                            <ellipse cx="40" cy="60" rx="28" ry="10" stroke="rgba(6,182,212,0.6)" stroke-width="2" fill="rgba(6,182,212,0.05)"/>
-                            <line x1="12" y1="20" x2="12" y2="60" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-                            <line x1="68" y1="20" x2="68" y2="60" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <circle cx="40" cy="40" r="8" fill="rgba(6,182,212,0.7)"/>
+                            <circle cx="40" cy="12" r="5" fill="rgba(255,255,255,0.4)"/>
+                            <circle cx="64" cy="26" r="5" fill="rgba(255,255,255,0.35)"/>
+                            <circle cx="64" cy="54" r="5" fill="rgba(255,255,255,0.35)"/>
+                            <circle cx="40" cy="68" r="5" fill="rgba(255,255,255,0.4)"/>
+                            <circle cx="16" cy="54" r="5" fill="rgba(255,255,255,0.35)"/>
+                            <circle cx="16" cy="26" r="5" fill="rgba(255,255,255,0.35)"/>
+                            <line x1="40" y1="32" x2="40" y2="17" stroke="rgba(6,182,212,0.5)" stroke-width="1.5"/>
+                            <line x1="47" y1="36" x2="60" y2="29" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <line x1="47" y1="44" x2="60" y2="51" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <line x1="40" y1="48" x2="40" y2="63" stroke="rgba(6,182,212,0.4)" stroke-width="1.5"/>
+                            <line x1="33" y1="44" x2="20" y2="51" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <line x1="33" y1="36" x2="20" y2="29" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
                         </svg>
                     </div>
                     <div class="project-content">
-                        <span class="project-tag">Big Data · Arquitecturas Distribuidas</span>
-                        <h3>Pipeline Big Data &amp; ML</h3>
-                        <p>Pipelines ETL distribuidos con PySpark sobre HDFS con optimización avanzada: particionado, broadcast joins y tuning de rendimiento. K-Means, árboles de decisión y regresión con Spark MLlib. Arquitecturas Lambda y Kappa implementadas sobre datos reales.</p>
+                        <span class="project-tag">AI Agent · LangGraph · Claude API</span>
+                        <h3>Agente Autónomo con Tool Use</h3>
+                        <p>Agente de investigación autónomo con ciclo plan→ejecutar→revisar→replanificar sobre 6 herramientas reales: RAG híbrido, búsqueda web, fetch de documentos, ejecución de código en sandbox, generador de informes y memoria persistente. Human-in-the-loop con aprobación explícita antes de ejecutar código. Estado persistido en SQLite — el agente sobrevive a reinicios.</p>
                         <div class="project-tech">
-                            <span class="tech-badge">PySpark</span>
-                            <span class="tech-badge">Apache Spark</span>
-                            <span class="tech-badge">Hadoop</span>
-                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">LangGraph</span>
+                            <span class="tech-badge">Claude API</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">ChromaDB</span>
+                            <span class="tech-badge">Streamlit</span>
+                            <span class="tech-badge">Docker</span>
                         </div>
-                        <!-- TODO: add real repo URL -->
                         <a href="#" class="project-link view-details">Ver detalles &#8594;</a>
                     </div>
                 </div>
 
-                <!-- NLP -->
-                <div class="project-card" data-project="nlp">
+                <!-- RAG BOE -->
+                <div class="project-card" data-project="rag">
                     <div class="project-image">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
-                            <circle cx="25" cy="30" r="6" fill="rgba(6,182,212,0.6)"/>
-                            <circle cx="50" cy="20" r="5" fill="rgba(255,255,255,0.4)"/>
-                            <circle cx="60" cy="45" r="7" fill="rgba(255,255,255,0.3)"/>
-                            <circle cx="30" cy="55" r="5" fill="rgba(6,182,212,0.4)"/>
-                            <circle cx="50" cy="58" r="4" fill="rgba(255,255,255,0.25)"/>
-                            <line x1="25" y1="30" x2="50" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-                            <line x1="50" y1="20" x2="60" y2="45" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-                            <line x1="25" y1="30" x2="30" y2="55" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
-                            <line x1="60" y1="45" x2="50" y2="58" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                            <line x1="30" y1="55" x2="50" y2="58" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+                            <rect x="15" y="10" width="35" height="45" rx="3" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="rgba(255,255,255,0.05)"/>
+                            <line x1="22" y1="22" x2="43" y2="22" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <line x1="22" y1="30" x2="43" y2="30" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <line x1="22" y1="38" x2="35" y2="38" stroke="rgba(6,182,212,0.6)" stroke-width="1.5"/>
+                            <circle cx="54" cy="54" r="12" stroke="rgba(6,182,212,0.7)" stroke-width="2" fill="rgba(6,182,212,0.08)"/>
+                            <line x1="63" y1="63" x2="70" y2="70" stroke="rgba(6,182,212,0.7)" stroke-width="2.5" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <div class="project-content">
-                        <span class="project-tag">NLP · Representaciones Vectoriales</span>
-                        <h3>Sistema NLP — Búsqueda Semántica</h3>
-                        <p>Motor de recuperación semántica sobre corpus en español con análisis comparativo de embeddings: BERT fine-tuned (contextuales) vs. GloVe (estáticos). Reducción dimensional con PCA y t-SNE, evaluación con Precision@k y MRR, pipeline completo de preprocesamiento y ranking de documentos.</p>
+                        <span class="project-tag">RAG · LegalTech · NLP</span>
+                        <h3>RAG — Consulta sobre Legislación BOE</h3>
+                        <p>Sistema de consulta en lenguaje natural sobre documentos legislativos reales del BOE español. Retrieval híbrido denso+sparse (ChromaDB + BM25) con re-ranking por cross-encoder, caché semántico Redis y agente legal multi-step con LangGraph. Score global 0.79 sobre 50 preguntas de referencia. Latencia media ~800ms.</p>
                         <div class="project-tech">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">BERT</span>
-                            <span class="tech-badge">GloVe</span>
-                            <span class="tech-badge">Transformers</span>
-                            <span class="tech-badge">PCA</span>
-                            <span class="tech-badge">t-SNE</span>
+                            <span class="tech-badge">Claude API</span>
+                            <span class="tech-badge">LangGraph</span>
+                            <span class="tech-badge">ChromaDB</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">BM25</span>
+                            <span class="tech-badge">Redis</span>
+                            <span class="tech-badge">Docker</span>
                         </div>
-                        <!-- TODO: add real repo URL -->
                         <a href="#" class="project-link view-details">Ver detalles &#8594;</a>
                     </div>
                 </div>

@@ -170,57 +170,58 @@ El proyecto está implementado como un notebook de análisis en Google Colab y c
                 codeLink: "https://github.com/lightskinhorti/Trading-App-Tracker"
             },
 
-            bigdata: {
-                tag: "Big Data · Arquitecturas Distribuidas",
-                title: "Pipeline Big Data & ML",
-                subtitle: "Pipelines ETL distribuidos a escala con PySpark y Hadoop, modelos ML aplicados sobre datos reales y comparativa de arquitecturas Lambda vs. Kappa.",
-                description: "Proyecto de ingeniería de datos que aborda los retos del procesamiento a gran escala: diseño e implementación de pipelines ETL distribuidos con PySpark sobre un cluster Hadoop/HDFS, con foco en la optimización de rendimiento (particionado estratégico, broadcast joins para evitar shuffles costosos, persistencia de DataFrames intermedios y tuning de configuración Spark). Sobre los datos transformados se aplican algoritmos ML con Spark MLlib. El proyecto también implementa y compara las dos arquitecturas de referencia en Big Data: Lambda (batch + speed layer independientes) y Kappa (procesamiento unificado en streaming), evaluando sus trade-offs en latencia, complejidad operativa y consistencia de datos.",
+            agent: {
+                tag: "AI Agent · LangGraph · Claude API",
+                title: "Agente Autónomo con Tool Use",
+                subtitle: "Sistema de investigación autónomo production-ready con ciclo plan→ejecutar→revisar→replanificar, 6 herramientas reales, human-in-the-loop y estado persistido en SQLite.",
+                description: `Agente de investigación autónomo construido sobre LangGraph con Claude como backbone LLM. El ciclo de ejecución es explícito y auditable: el agente planifica el enfoque, ejecuta herramientas para recopilar información, revisa si los resultados son suficientes y replanifica si es necesario. <br><br>
+A diferencia de un chatbot con herramientas, este sistema usa checkpointing en disco (SQLite) en lugar de estado en memoria — el agente sobrevive a reinicios y reanuncia exactamente donde se quedó. El mecanismo de human-in-the-loop va más allá de un simple diálogo de confirmación: interrumpe la ejecución con <code>interrupt_before</code> antes de ejecutar código, requiriendo aprobación explícita, y mantiene trails de razonamiento auditables. La API REST expone ejecución asíncrona con polling de estado.`,
                 features: [
-                    "Pipelines ETL distribuidos con PySpark sobre HDFS: ingesta, transformación y carga a escala",
-                    "Optimización avanzada: particionado estratégico, broadcast joins, persistencia de DataFrames, tuning de executor memory y parallelism",
-                    "K-Means clustering distribuido con Spark MLlib sobre datasets de volumen real",
-                    "Árboles de decisión y regresión lineal con validación cruzada distribuida",
-                    "Validación de calidad de datos: detección de nulos, outliers y drift en el pipeline",
-                    "Arquitectura Lambda: batch layer (HDFS + Spark) + speed layer (Spark Streaming) + serving layer",
-                    "Arquitectura Kappa: procesamiento unificado en streaming con estado persistente"
+                    "Ciclo autónomo plan → ejecutar → revisar → replanificar con trails de razonamiento auditables",
+                    "6 herramientas reales: rag_search (ChromaDB híbrido), web_search (DuckDuckGo), document_fetch (HTML+PDF), code_executor (sandbox RestrictedPython), report_writer y memory_store",
+                    "Human-in-the-loop con interrupt_before en ejecución de código — requiere aprobación explícita antes de correr cualquier script",
+                    "Checkpointing en SQLite — estado persistido en disco, el agente reanuda tras reinicios sin perder contexto",
+                    "Búsqueda híbrida semántica + keyword sobre la base de conocimiento en ChromaDB",
+                    "API REST con FastAPI: ejecución asíncrona, polling de estado y observabilidad (token usage, latencias de herramientas, métricas de éxito)",
+                    "Despliegue containerizado con Docker Compose — UI en Streamlit"
                 ],
-                tech: ["PySpark", "Apache Spark", "Hadoop", "HDFS", "Spark MLlib", "Spark Streaming", "Python"],
+                tech: ["LangGraph", "Claude API", "FastAPI", "ChromaDB", "Streamlit", "RestrictedPython", "SQLite", "Docker", "Python"],
                 responsibilities: [
-                    "Diseño e implementación de los pipelines ETL end-to-end",
-                    "Optimización de rendimiento a nivel de Spark (configuración, tuning, profiling)",
-                    "Implementación de modelos ML distribuidos con Spark MLlib",
-                    "Diseño y comparativa de arquitecturas Lambda y Kappa",
-                    "Análisis de trade-offs de rendimiento y consistencia entre ambas arquitecturas"
+                    "Diseño de la arquitectura del agente: grafo de estados LangGraph, herramientas y ciclo de revisión",
+                    "Implementación del mecanismo human-in-the-loop con interrupt_before y flujo de aprobación",
+                    "Integración de las 6 herramientas con manejo de errores y logging de latencias",
+                    "Configuración del checkpointing en SQLite para persistencia de estado entre sesiones",
+                    "Exposición de la API REST asíncrona con FastAPI y despliegue con Docker Compose"
                 ],
-                // TODO: add real repo URL
-                codeLink: "#"
+                codeLink: "https://github.com/lightskinhorti/AI-Agent-With-Tool-Use"
             },
 
-            nlp: {
-                tag: "NLP · Representaciones Vectoriales",
-                title: "Sistema NLP — Búsqueda Semántica en Español",
-                subtitle: "Motor de recuperación semántica sobre corpus en español con análisis comparativo riguroso entre embeddings contextuales (BERT) y estáticos (GloVe).",
-                description: "Proyecto de NLP que construye un sistema de búsqueda semántica orientado al español, un idioma con menor cobertura que el inglés en los modelos preentrenados estándar. El núcleo del proyecto es la comparativa rigurosa entre dos familias de representaciones vectoriales: embeddings estáticos con GloVe (vectors entrenados sobre corpus en español) y embeddings contextuales con BERT fine-tuned en español (modelo BETO). El sistema implementa un pipeline completo: preprocesamiento del corpus, generación de representaciones, indexación semántica, recuperación de documentos por similitud coseno y evaluación con métricas de información retrieval. La reducción dimensional con PCA y t-SNE permite visualizar la estructura del espacio vectorial y analizar cómo cada modelo agrupa conceptos semánticamente relacionados.",
+            rag: {
+                tag: "RAG · LegalTech · NLP",
+                title: "RAG — Consulta sobre Legislación BOE",
+                subtitle: "Sistema de consulta en lenguaje natural sobre legislación española real del BOE con retrieval híbrido, re-ranking y agente legal multi-step. Score global 0.79 sobre 50 preguntas de referencia.",
+                description: `Sistema RAG production-ready orientado a documentos legislativos del BOE (Boletín Oficial del Estado) español. Resuelve el reto de navegar legislación técnica extensa en español — un dominio con cobertura limitada en modelos preentrenados estándar. <br><br>
+La arquitectura implementa un pipeline sofisticado: las consultas pasan primero por un caché semántico Redis (umbral de similitud ~95%); los cache misses activan un agente legal con LangGraph que puede descomponer preguntas complejas, ejecutar búsqueda híbrida densa+sparse (ChromaDB + BM25) y aplicar re-ranking con cross-encoder antes de que Claude genere la respuesta citando las fuentes. Todas las peticiones llevan cabeceras de trazabilidad y métricas de latencia expuestas vía Prometheus/Grafana.`,
                 features: [
-                    "Pipeline de preprocesamiento NLP para español: tokenización, lematización, eliminación de stopwords y normalización",
-                    "Embeddings estáticos con GloVe entrenado sobre corpus en español (agregación por documento)",
-                    "Embeddings contextuales con BERT en español (BETO / multilingual BERT fine-tuned)",
-                    "Indexación semántica por similitud coseno sobre el espacio de embeddings",
-                    "Evaluación de relevancia con métricas de Information Retrieval: Precision@k, Recall@k y MRR (Mean Reciprocal Rank)",
-                    "Reducción dimensional con PCA (varianza explicada) y t-SNE (visualización 2D de clusters semánticos)",
-                    "Análisis comparativo cuantitativo y cualitativo: BERT vs. GloVe en tareas de similitud y recuperación"
+                    "Ingestión de documentos reales del BOE vía API pública (PDF, TXT, Markdown, XML) — ~2.000+ chunks de ~150 documentos legislativos",
+                    "Retrieval híbrido: embeddings densos (Sentence-Transformers multilingüe) + BM25 sparse, fusionados con Reciprocal Rank Fusion",
+                    "Re-ranking con cross-encoder (ms-marco-MiniLM-L-6-v2) para maximizar precisión de contexto",
+                    "Caché semántico Redis con similitud coseno (~95% threshold) — respuestas instantáneas para preguntas similares",
+                    "Agente legal multi-step con LangGraph: descompone preguntas complejas en sub-queries y consolida resultados",
+                    "Filtrado por metadatos: sección, departamento y fecha del documento",
+                    "Benchmark sobre 50 preguntas de referencia — Fidelidad 0.82, Relevancia 0.78, Context Precision 0.85, Context Recall 0.71",
+                    "Latencia media ~800ms end-to-end; p95 ~1.4s. Observabilidad con Prometheus + Grafana"
                 ],
-                tech: ["Python", "BERT", "GloVe", "HuggingFace Transformers", "Scikit-learn", "PCA", "t-SNE", "NumPy", "NLTK"],
+                tech: ["Claude API", "LangGraph", "ChromaDB", "FastAPI", "Sentence-Transformers", "BM25", "Redis", "Prometheus", "Docker", "Python"],
                 responsibilities: [
-                    "Diseño del pipeline NLP end-to-end para corpus en español",
-                    "Selección e integración de modelos preentrenados (BETO, GloVe-es)",
-                    "Implementación del motor de recuperación semántica por similitud coseno",
-                    "Definición del protocolo de evaluación con métricas de IR",
-                    "Análisis exploratorio del espacio vectorial con PCA y t-SNE",
-                    "Redacción del informe comparativo con conclusiones sobre el comportamiento de cada representación"
+                    "Diseño del pipeline RAG completo: ingestión, chunking, indexación, retrieval y generación",
+                    "Implementación del retrieval híbrido denso+sparse con Reciprocal Rank Fusion y cross-encoder reranking",
+                    "Configuración del caché semántico Redis con umbral de similitud coseno ajustable",
+                    "Desarrollo del agente legal multi-step con LangGraph para descomposición de consultas complejas",
+                    "Benchmark de evaluación sobre 50 preguntas de referencia en derecho laboral, fiscal y administrativo",
+                    "Configuración de observabilidad: Prometheus, Grafana y trazabilidad por petición"
                 ],
-                // TODO: add real repo URL
-                codeLink: "#"
+                codeLink: "https://github.com/lightskinhorti/RAG"
             }
         };
 
